@@ -1,0 +1,103 @@
+<html>
+<head>
+    <link href="style/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<title>
+</title>
+<body>
+    <div class="sidenav">
+        <p class="roll">1806125</p>
+        <a href="/home" class="sidechose">
+            <i class="material-icons">home</i>Home
+        </a>
+        <a href="/about">
+            <i class="material-icons">face</i>About
+        </a>
+    </div>
+    <div class="main">
+        <p class="heading">My Meetings</p>
+        <div class="card">
+            <br>
+            <div class="container">
+               <input class="search" placeholder="Search" onkeyup="myFunction()" id="myInput"></input>
+               From:<input class="search" type="date" id="sdate"  min="2018-01-01" max="2022-12-31">
+               To:<input type="date" class="search" id="edate"   min="2018-01-01" max="2022-12-31">
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="card">
+            <br>
+            <div class="container">
+               <table id="myTable">
+                   <tr>
+                    <th>Sl. No.</th>
+                    <th>Meeting Name</th>
+                    <th>No of person attending</th>
+                    <th>Date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Actions</th>
+                   </tr>
+                    <% meets.forEach(function (meet,index) { %>
+                        <tr>
+                            <td><p class="tabtext"><%= index+1 %></p></td>
+                            <td><p class="tabtext"><%= meet.m_name%></p></td>
+                            <td><p class="tabtext"><%= meet.no %></p></td>
+                            <td><p class="tabtext"><%= meet.date%></p></td>
+                            <td><p class="tabtext"><%= meet.start %></p></td>
+                            <td><p class="tabtext"><%= meet.end%></p></td>
+                            <td>
+                                <form method="post" action="/delmeet">
+                                    <button class="del" name="dmeet" value="<%= meet._id %>">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </table>
+                <table>
+                   <tr>
+                    <form method="post" action="/addmeet">
+                       <td></td>
+                       <td><input name="mname"></input></td>
+                       <td><input name="no"></input></td>
+                       <td><input type="date" id="start" name="date" min="2018-01-01" max="2022-12-31"></td>
+                       <td><input type="time"  name="start"></td>
+                       <td><input type="time"  name="end"></td>
+                       <td><button class="add">
+                        Add
+                    </button></td>
+                    </form>
+                   </tr>
+                </table>
+            </div>
+            <br>
+        </div>
+    </div>
+</body>
+<script>
+    function myFunction(){
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }       
+    }
+}
+</script>
+</html>
+

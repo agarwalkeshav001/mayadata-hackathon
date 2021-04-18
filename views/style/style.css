@@ -1,0 +1,106 @@
+.sidenav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #1E5F74;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+  display: block;
+}
+
+.sidechose{
+    background-color: #133B5C;
+}
+
+.roll{
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+.tabtext{
+  text-align: center;
+}
+
+.main {
+    margin-left: 300px; 
+    font-size: 24px; 
+    padding: 0px 10px;
+    background-color: #F2F2F2;
+    height: 100%;
+    width: 100%;
+    padding-left: 100px;
+    padding-top: 70px;
+  }
+
+.heading{
+    font-size: 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 60%;
+        background-color: white;
+        border-radius: 5px;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+    display: inline-block;
+    
+}
+
+.text
+{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+}
+
+.search{
+  display: inline-block;
+  
+  margin-inline: 35px;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+}
+
+table {
+  border-spacing:50px;
+}
+
+
+th{
+  color:#1E5F74;
+  
+}
+
+.add{
+  background-color: #1E5F74;
+  color:white
+}
+
+.del{
+  background-color: white;
+  color:red;
+  border: transparent;
+}
